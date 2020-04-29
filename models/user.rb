@@ -20,7 +20,13 @@ def create_user(email, password, name)
 end
 
 def find_one_user_by_id(user_id)
-  sql = "SELECT * FROM users where id = $1;"
+  sql = "SELECT * FROM users WHERE id = $1;"
   params = [user_id]
-  user = run_sql(sql, params)[0]
+  run_sql(sql, params)[0]
+end
+
+def find_one_user_by_email(email)
+  sql = "SELECT * FROM users WHERE email = $1;"
+  params = [email]
+  run_sql(sql, params)[0]
 end

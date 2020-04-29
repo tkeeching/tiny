@@ -1,12 +1,33 @@
 <h1>Tiny</h1>
 
-<a href="/login">Login</a>
-<a href="/signup">Sign up</a>
+<% if logged_in? %>
+  <p>Welcome back, <%= current_user["email"] %></p>
+  <a href="/users/<%= current_user["id"] %>/posts">Your posts</p>
+  <form action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+  </form>
+<% else %>
+  <a href="/login">Login</a>
+  <a href="/users/new">Sign up</a>
+<% end %>
 
 <% posts.each do |post| %>
   <div class="post-entry">
     <img src="<%= find_one_user_by_id(post["user_id"])["avatar"] %>" width="24px" height="24px" alt="user-avatar">
     <p><%= find_one_user_by_id(post["user_id"])["email"] %></p>
     <p><%= post["content"] %></p>
+
+    <% if logged_in? %>
+    <form action="/posts/<%= post["id"] %>/edit" method="post">
+      <input type="hidden" name="upvote" value="1">
+      <button>Heart</button>
+    </form>
+    <form action="/posts/<%= post["id"] %>/edit" method="post">
+      <input type="hidden" name="downvote" value="1">
+      <button>Neutral</button>
+    </form>
+    <% end %>
   </div>
 <% end %>
+

@@ -1,0 +1,12 @@
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 1', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 2', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 3', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 4', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 5', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('admin Tiny 6', Time.now, Time.now, 1);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 1', Time.now, Time.now, 2);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 2', Time.now, Time.now, 2);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 3', Time.now, Time.now, 2);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 4', Time.now, Time.now, 2);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 5', Time.now, Time.now, 2);
+INSERT INTO posts (content, date_created, time_created, user_id) VALUES ('This is user1 tiny 6', Time.now, Time.now, 2);
