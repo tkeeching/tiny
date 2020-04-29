@@ -1,0 +1,12 @@
+<h1>Tiny</h1>
+
+<a href="/login">Login</a>
+<a href="/signup">Sign up</a>
+
+<% posts.each do |post| %>
+  <div class="post-entry">
+    <img src="<%= find_one_user_by_id(post["user_id"])["avatar"] %>" width="24px" height="24px" alt="user-avatar">
+    <p><%= find_one_user_by_id(post["user_id"])["email"] %></p>
+    <p><%= post["content"] %></p>
+  </div>
+<% end %>

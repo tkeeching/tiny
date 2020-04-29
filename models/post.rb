@@ -1,5 +1,5 @@
 def all_post()
-  sql = "SELECT * FROM posts ORDER BY id;"
+  sql = "SELECT * FROM posts ORDER BY date_created DESC, time_created DESC;"
   params = []
   records = run_sql(sql, params)
 end

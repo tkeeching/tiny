@@ -12,9 +12,15 @@ def insert_avatar
   avatar_dir = "/images/default_avatar.png"
 end
 
-def create_user(email, password)
+def create_user(email, password, name)
   password_digest = BCrypt::Password.create(password)
-  sql = "INSERT INTO users (email, password_digest, avatar) VALUES ($1, $2, $3);"
-  params = [email, password_digest, insert_avatar]
+  sql = "INSERT INTO users (email, password_digest, avatar, username) VALUES ($1, $2, $3, $4);"
+  params = [email, password_digest, insert_avatar, name]
   run_sql(sql, params)
+end
+
+def find_one_user_by_id(user_id)
+  sql = "SELECT * FROM users where id = $1;"
+  params = [user_id]
+  user = run_sql(sql, params)[0]
 end

@@ -17,5 +17,5 @@ CREATE TABLE posts (
 );
 
 ALTER TABLE users ADD COLUMN avatar TEXT;
-
+ALTER TABLE users ADD COLUMN name VARCHAR(30);
 
