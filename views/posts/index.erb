@@ -1,9 +1,9 @@
 <h1>Tiny</h1>
 
 <% if logged_in? %>
-  <p>Welcome back, <%= current_user["email"] %></p>
-  <a href="/users/<%= current_user["id"] %>/posts">Your posts</p>
-  <a href="/users/<%= current_user["id"] %>/posts/new">New post</p>
+  <p>Welcome back, <%= current_user["username"] %>!</p>
+  <a href="/users/<%= current_user["id"] %>/posts">Your posts</a>
+  <a href="/users/<%= current_user["id"] %>/posts/new">New post</a>
   <form action="/logout" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Logout</button>

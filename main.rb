@@ -17,6 +17,7 @@ end
 
 post "/login" do
   user = find_one_user_by_email(params[:email])
+
   if user && BCrypt::Password.new(user["password_digest"]) == params[:password]
     session[:user_id] = user["id"]
     redirect "/"
@@ -37,8 +38,7 @@ end
 
 post "/users" do
   if params[:password] == params[:confirm_password]
-    password_digest = BCrypt::Password.create(params[:password])
-    create_user(params[:email], password_digest, params[:username])
+    create_user(params[:email], params[:password], params[:username])
     redirect "/login"
   else
     redirect "/users/new"
