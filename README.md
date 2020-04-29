@@ -9,6 +9,9 @@ The app that speaks positivity
 - Sinatra
 - PostgreSQL
 
+## UI Direction
+Mobile first
+
 ## Summary
 
 ## Functionality
