@@ -17,7 +17,6 @@ end
 
 post "/login" do
   user = find_one_user_by_email(params[:email])
-
   if user && BCrypt::Password.new(user["password_digest"]) == params[:password]
     session[:user_id] = user["id"]
     redirect "/"
@@ -37,14 +36,22 @@ get "/users/new" do
 end
 
 post "/users" do
-  # if params[:email] != find_one_user_by_email(params[:email]) && params[:password] == params[:confirm_password]
-  #   password_digest = BCrypt::Password.create(params[:password])
-  #   create_user(params[:email], password_digest, username)
-  #   new_account_created = true
-  #   redirect "/login"
-  # else
-  #   redirect "/users/new"
-  # end
+  if params[:password] == params[:confirm_password]
+    password_digest = BCrypt::Password.create(params[:password])
+    create_user(params[:email], password_digest, params[:username])
+    redirect "/login"
+  else
+    redirect "/users/new"
+  end
+end
+
+get "/users/:id/posts/new" do
+  erb :'/posts/new'
+end
+
+post "/users/:id/posts/new" do
+  create_post(params[:content], current_user["id"])
+  redirect "/"
 end
 
 get "/users/:id/posts" do
@@ -56,6 +63,9 @@ delete "/users/:id/posts" do
   delete_post(params[:post_id])
   redirect "/users/#{ current_user["id"] }/posts"
 end
+
+
+
 
 # post "/posts/:id/edit" do
 #   update_post(params[:id], params[:upvote], params[:downvote], current_user["id"])

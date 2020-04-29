@@ -3,6 +3,7 @@
 <% if logged_in? %>
   <p>Welcome back, <%= current_user["email"] %></p>
   <a href="/users/<%= current_user["id"] %>/posts">Your posts</p>
+  <a href="/users/<%= current_user["id"] %>/posts/new">New post</p>
   <form action="/logout" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Logout</button>

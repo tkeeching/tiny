@@ -1,0 +1,7 @@
+<h1>Create new post</h1>
+
+
+<form action="/users/<%= current_user["id"] %>/posts/new" method="post">
+  <input type="text" name="content" placeholder="Whats on your mind?">
+  <button>Post</button>
+</form>
