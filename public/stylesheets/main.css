@@ -6,12 +6,28 @@ body {
 
 
 /* layout */
-
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
 
 /* index */
 .post-entry {
-  margin: 50px auto;
+  display: grid;
+  grid-template-rows: 40px 80px 40px;
+  width: 80%;
+  justify-self: center;
+}
+
+.entry-header {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+}
+
+.entry-content {
+  display: grid;
+
 }
 
 

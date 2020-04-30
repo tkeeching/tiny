@@ -2,7 +2,7 @@ require "bcrypt"
 require "pg"
 
 def run_sql(sql, params)
-  conn = PG.connect(dbname: "tiny")
+  conn = PG.connect(ENV['DATABASE_URL'] || {dbname: 'tiny'})
   records = conn.exec_params(sql, params)
   conn.close
   return records

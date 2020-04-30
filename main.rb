@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
 require_relative "models/user"
 require_relative "models/post"
 require_relative "models/vote"
