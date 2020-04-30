@@ -2,6 +2,8 @@
 
 The app that speaks positivity
 
+Try it out here: [Demo](https://secure-wildwood-53101.herokuapp.com/)
+
 ## Stack
 - HTML
 - CSS
