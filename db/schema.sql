@@ -27,6 +27,12 @@ CREATE TABLE test (
   upvote_users INTEGER[]
 );
 
+CREATE TABLE votes (
+  id SERIAL PRIMARY KEY,
+  post_id INTEGER,
+  user_id INTEGER
+);
+
 ALTER TABLE users ADD COLUMN avatar TEXT;
 ALTER TABLE users ADD COLUMN name VARCHAR(30);
 ALTER TABLE users ADD COLUMN upvoted_post TEXT;

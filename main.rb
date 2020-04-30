@@ -2,13 +2,15 @@ require "sinatra"
 require "sinatra/reloader"
 require_relative "models/user"
 require_relative "models/post"
+require_relative "models/vote"
 require_relative "lib/lib"
 
 enable :sessions
 
 get "/" do
   posts = all_post
-  erb(:'/posts/index', locals: {posts: posts})
+  votes = all_vote
+  erb(:'/posts/index', locals: {posts: posts, votes: votes})
 end
 
 get "/login" do
@@ -64,6 +66,17 @@ delete "/users/:id/posts" do
   redirect "/users/#{ current_user["id"] }/posts"
 end
 
+post "/votes/:post_id/new" do
+  current_user_votes = post_votes_by_user(current_user["id"])
+  post_votes = current_user_votes.select { |vote| vote["post_id"] == params["post_id"] }
+  if post_votes.count != 0
+    delete_vote(params[:post_id])
+    redirect "/"
+  else
+    create_vote(params[:post_id], current_user["id"])
+    redirect "/"
+  end
+end
 
 
 

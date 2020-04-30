@@ -18,14 +18,16 @@
     <p><%= post["content"] %></p>
 
     <% if logged_in? %>
-    <form action="/posts/<%= post["id"] %>/edit" method="post">
-      <input type="hidden" name="upvote" value="true">
-      <button>Heart</button>
-    </form>
-    <form action="/posts/<%= post["id"] %>/edit" method="post">
-      <input type="hidden" name="downvote" value="1">
-      <button>Neutral</button>
-    </form>
+      <% number_of_votes = votes.select { |vote| vote["post_id"] == post["id"] }%>
+      <form action="/votes/<%= post["id"] %>/new" method="post">
+        <input type="hidden" name="upvote" value="true">
+        <p><%= number_of_votes.count %></p>
+        <button>Heart</button>
+      </form>
+      <form action="/posts/<%= post["id"] %>/edit" method="post">
+        <input type="hidden" name="downvote" value="1">
+        <button>Neutral</button>
+      </form>
     <% end %>
   </div>
 <% end %>
