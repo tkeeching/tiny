@@ -1,25 +1,29 @@
-<% if logged_in? %>
+<div class="index-wrapper">
+
+  <% if logged_in? %>
 <div class="index-header">
-
+  <div class="welcome-message">
+    <p>Welcome back, <%= current_user["username"] %>!</p>
+    <p><img src="<%= current_user["avatar"] %>" height="28px" width="28px"></p>
+  </div>
 </div>
-<div class="welcome-message">
-  <p>Welcome back, <%= current_user["username"] %>!</p>
-</div>
 
-<nav>
+<nav class="logged-in-nav">
   <a href="/users/<%= current_user["id"] %>/posts">Your posts</a>
   <a href="/users/<%= current_user["id"] %>/posts/new">New post</a>
   <form action="/logout" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Logout</button>
   </form>
+</nav>
 <% else %>
+<nav class="logged-out-nav">
   <a href="/login">Login</a>
   <a href="/users/new">Sign up</a>
-<% end %>
 </nav>
+<% end %>
 
-
+<main>
 <% posts.each do |post| %>
   <div class="post-entry">
     <div class="entry-header">
@@ -35,8 +39,8 @@
         <% number_of_votes = votes.select { |vote| vote["post_id"] == post["id"] }%>
         <form action="/votes/<%= post["id"] %>/new" method="post">
           <input type="hidden" name="upvote" value="true">
+          <button><img src="/images/heart_icon.png" height="32px" width="32px"></button>
           <p><%= number_of_votes.count %></p>
-          <button>Heart</button>
         </form>
         <form action="/posts/<%= post["id"] %>/edit" method="post">
           <input type="hidden" name="downvote" value="1">
@@ -46,5 +50,9 @@
     </div>
   </div>
 <% end %>
+<main>
+
+</div>
+
 
 
