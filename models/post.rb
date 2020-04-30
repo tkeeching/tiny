@@ -10,6 +10,12 @@ def find_all_post_by_user(user_id)
   records = run_sql(sql, params)
 end
 
+def find_one_post_by_id(id)
+  sql = "SELECT * FROM posts WHERE id = $1;"
+  params = [id]
+  records = run_sql(sql, params)[0]
+end
+
 def create_post(content, user_id)
   sql = "INSERT INTO posts (content, date_created, time_created, user_id) VALUES ($1, $2, $3, $4);"
   params = [content, Time.now, Time.now, user_id]
