@@ -9,7 +9,7 @@ body {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: 80px 1fr 30px;
   }
 
   .header {
@@ -21,7 +21,7 @@ body {
     text-decoration: none;
     text-align: center;
     color: rgba(89, 0, 255, 1);
-    font-weight: 500;
+    font-weight: lighter;
   }
 
   /* index */
@@ -289,14 +289,15 @@ body {
 
   .new-post-wrapper form button {
     grid-row: 2 / span 1;
-    height: 30px;
-    width: 60%;
+    height: 40px;
+    width: 50%;
     justify-self: center;
     border: none;
     border-radius: 5px;
     background-color: rgba(89, 0, 255, 1);
     color: white;
     font-weight: bold;
+    font-size: 1.1rem;
   }
 
 
@@ -386,6 +387,15 @@ body {
     outline-width: 0;
   }
 
+
+  /* footer */
+  footer {
+    grid-row: 3 / span 1;
+    justify-self: center;
+    align-self: end;
+    color: gray;
+    font-size: 0.7rem;
+  }
 
 }
 /* END OF @media RULES */
