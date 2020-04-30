@@ -1,13 +1,27 @@
-<h1>Your posts</h1>
+<div class="show-post-wrapper">
+
+<div class="show-post-nav">
+  <a href="/"><img src="/images/back_button.png" width="22px" height="26px"></a>
+  <h3>Your post</h3>
+</div>
 
 <% posts.each do |post| %>
   <div class="user-post-entry">
-    <p><%= post["content"] %></p>
-    <p><%= post["date_created"] %></p>
-    <form action="/users/<%= current_user["id"] %>/posts" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="hidden" name="post_id" value="<%= post["id"] %>">
-      <button>Delete post</button>
-    </form>
+    <div class="user-entry-header">
+      <p><%= post["date_created"] %></p>
+    </div>
+    <div class="user-entry-content">
+      <p><%= post["content"] %></p>
+    </div>
+    <div class="user-entry-interact">
+      <form action="/users/<%= current_user["id"] %>/posts" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="post_id" value="<%= post["id"] %>">
+        <button>Delete post</button>
+      </form>
+    </div>
   </div>
 <% end %>
+
+</div>
+

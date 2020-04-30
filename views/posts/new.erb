@@ -1,7 +1,17 @@
-<h1>Create new post</h1>
-
+<div class="new-post-wrapper">
+    
+<div class="new-post-nav">
+  <a href="/"><img src="/images/back_button.png" width="22px" height="26px"></a>
+  <h3>Create new post</h3>
+</div>
 
 <form action="/users/<%= current_user["id"] %>/posts/new" method="post">
-  <input type="text" name="content" placeholder="Whats on your mind?">
+  <div class="input-wrapper">
+    <img src="<%= current_user["avatar"] %>" width="24px" height="24px" alt="user-avatar">
+    <%# <input type="text" name="content" placeholder="Whats on your mind?"> %>
+    <textarea name="content" id="" cols="20" rows="6" placeholder="What's on your mind?"></textarea>
+  </div>  
   <button>Post</button>
 </form>
+
+</div>
