@@ -4,7 +4,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) { */
   /* layout */
   .grid-container {
     display: grid;
@@ -26,6 +26,7 @@ body {
 
   /* index */
   .index-wrapper {
+    grid-row: 2 / span 1;
     display: grid;
     grid-template-rows: 50px 50px 1fr;
   }
@@ -451,5 +452,5 @@ body {
   }
 
 }
-/* END OF @media RULES */
+END OF @media RULES
 
