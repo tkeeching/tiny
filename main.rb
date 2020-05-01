@@ -22,7 +22,11 @@ get "/login" do
 end
 
 post "/login" do
-  user = find_one_user_by_email(params[:email])
+  if params[:email] != '' && params[:password] != ''
+    user = find_one_user_by_email(params[:email])
+  else
+    user = false
+  end
 
   if user && BCrypt::Password.new(user["password_digest"]) == params[:password]
     session[:user_id] = user["id"]
@@ -43,9 +47,13 @@ get "/users/new" do
 end
 
 post "/users" do
-  if params[:password] == params[:confirm_password]
-    create_user(params[:email], params[:password], params[:username])
-    redirect "/login"
+  if params[:username] != '' && params[:email] != '' && params[:password] != ''
+    if params[:password] == params[:confirm_password]
+      create_user(params[:email], params[:password], params[:username])
+      redirect "/login"
+    else
+      redirect "/users/new"
+    end
   else
     redirect "/users/new"
   end
