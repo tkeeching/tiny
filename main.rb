@@ -13,6 +13,10 @@ get "/" do
   erb(:'/posts/index', locals: {posts: posts, votes: votes})
 end
 
+get "/about" do
+  erb :about
+end
+
 get "/login" do
   erb :'/sessions/login'
 end
