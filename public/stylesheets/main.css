@@ -66,6 +66,7 @@ body {
     background-color: #fff;
     color: rgba(89, 0, 255, 1);
     font-size: inherit;
+    font-weight: lighter;
   }
 
   main {
