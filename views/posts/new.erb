@@ -9,7 +9,7 @@
   <div class="input-wrapper">
     <img src="<%= current_user["avatar"] %>" width="24px" height="24px" alt="user-avatar">
     <%# <input type="text" name="content" placeholder="Whats on your mind?"> %>
-    <textarea name="content" id="" cols="25" rows="6" placeholder="What's on your mind, <%= current_user["username"] %>?"></textarea>
+    <textarea name="content" id="" cols="25" rows="6" placeholder="What's on your mind, <%= current_user["username"] %>?" required></textarea>
   </div>  
   <button>Post</button>
 </form>
