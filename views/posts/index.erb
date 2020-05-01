@@ -47,6 +47,17 @@
           <input type="hidden" name="downvote" value="1">
           <button>Neutral</button>
         </form>
+      <% else %>
+        <% number_of_votes = votes.select { |vote| vote["post_id"] == post["id"] }%>
+        <form action="">
+          <input type="hidden" name="upvote" value="true">
+          <button><img src="/images/heart_icon.png" height="32px" width="32px"></button>
+          <p><%= number_of_votes.count %></p>
+        </form>
+        <form action="">
+          <input type="hidden" name="downvote" value="1">
+          <button>Neutral</button>
+        </form>
       <% end %>
     </div>
   </div>
