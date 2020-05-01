@@ -41,6 +41,8 @@ The app lets user share word-based posts under 150 characters.
 - [ ] better date formatting for cleaner UI
 - [x] need a method to display upvote/downvote counter
 - [ ] need email and username validation upon signup to prevent duplicates
+- [ ] app gives internal server error when user tries to login with non-existing account
+- [ ] whole page will reload when user click the heart button
 
 
 ## Future features
@@ -49,3 +51,4 @@ The app lets user share word-based posts under 150 characters.
 - [ ] allow user to udpate their profile
 - [ ] allow user to comment on posts
 - [ ] allow user to share post to other platform
+- [ ] display word counter when user is creating new post
