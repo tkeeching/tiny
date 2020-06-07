@@ -2,8 +2,11 @@
 
 A lightweight app that speaks positivity
 
-Try it out here: [Demo](https://secure-wildwood-53101.herokuapp.com/)
+Try it out [HERE](https://secure-wildwood-53101.herokuapp.com/)
 
+<a href="https://secure-wildwood-53101.herokuapp.com/" target="_blank">
+    <img src="./screenshot.png" alt="screenshot">
+</a>
 
 ## Stack
 - HTML
