@@ -273,8 +273,6 @@ main {
   background-color: transparent;
 }
 
-
-
 .new-post-wrapper h3 {
   padding-left: 10px;
   color: rgba(89, 0, 255, 1);
@@ -357,6 +355,11 @@ main {
   justify-self: start;
 }
 
+.user-post-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
 .user-post-entry {
   display: grid;
   grid-template-rows: 50px 1fr 45px;
@@ -364,7 +367,8 @@ main {
   justify-self: center;
   border: 0.5px solid rgba(138, 79, 248, 0.3);
   padding: 0 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 .user-entry-header {
@@ -415,6 +419,10 @@ main {
 
 .user-entry-interact form button:focus {
   outline-width: 0;
+}
+
+.user-entry-interact form button:hover {
+  cursor: pointer;
 }
 
 /* about page */
