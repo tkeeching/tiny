@@ -39,8 +39,8 @@ body {
   place-items: center;
 }
 
-nav a:hover {
-  background-color: rgba(89, 0, 255, 0.1);
+a:hover {
+  background: none;
 }
 
 .index-wrapper nav a:first-of-type{
