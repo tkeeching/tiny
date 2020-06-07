@@ -358,6 +358,7 @@ main {
 .user-post-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-row-gap: 30px;
 }
 
 .user-post-entry {
