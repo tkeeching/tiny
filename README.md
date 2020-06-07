@@ -48,7 +48,7 @@ The app lets user share word-based posts under 150 characters.
 ## Future features
 
 - [ ] display post by number of hearts
-- [ ] allow user to udpate their profile
+- [ ] allow user to update their profile
 - [ ] allow user to comment on posts
 - [ ] allow user to share post to other platform
 - [ ] display word counter when user is creating new post
