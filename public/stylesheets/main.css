@@ -6,14 +6,6 @@ body {
   background-size: cover;
 }
 
-@media screen and (max-width: 900px) {
-  body {
-    background-size: 100vh 100%;
-    background-attachment: fixed;
-  }
-}
-
-
 /* layout */
 .grid-container {
   display: grid;
@@ -70,18 +62,34 @@ nav a:hover {
 
 .logged-in-nav {
   grid-row: 2 / span 1;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .logged-in-nav a:focus {
   outline-width: 0;
 }
 
+.logged-in-nav a:hover {
+  background: none;
+}
+
 .logged-in-nav form button {
   border: none;
-  background-color: #fff;
+  background: none;
   color: rgba(89, 0, 255, 1);
   font-size: inherit;
   font-weight: lighter;
+}
+
+.logged-in-nav form button:hover {
+  cursor: pointer;
+}
+
+.logged-out-nav {
+  grid-row: 2 / span 1;
+  width: 40%;
+  margin: 0 auto;
 }
 
 main {
@@ -265,6 +273,8 @@ main {
   background-color: transparent;
 }
 
+
+
 .new-post-wrapper h3 {
   padding-left: 10px;
   color: rgba(89, 0, 255, 1);
@@ -287,6 +297,7 @@ main {
   align-items: start;
   justify-items: center;
   padding: 10px 20px;
+  background-color: #fff;
 }
 
 .new-post-wrapper form textarea {
@@ -321,7 +332,6 @@ main {
   font-size: 1.1rem;
 }
 
-
 /* show post */
 .show-post-wrapper {
   grid-row: 2 / span 1;
@@ -346,7 +356,6 @@ main {
   color: rgba(89, 0, 255, 1);
   justify-self: start;
 }
-
 
 .user-post-entry {
   display: grid;
@@ -408,7 +417,6 @@ main {
   outline-width: 0;
 }
 
-
 /* about page */
 .about-wrapper {
   grid-row: 2 / span 1;
@@ -453,6 +461,10 @@ main {
   margin: 0;
 }
 
+form input {
+  background-color: rgba(255, 255, 255, 0);
+}
+
 
 /* footer */
 footer {
@@ -466,4 +478,20 @@ footer {
 
 .emoji-heart {
   color: red;
+}
+
+.back-arrow {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-size: 100vh 100%;
+    background-attachment: fixed;
+  }
+
+  .logged-in-nav {
+    grid-row: 2 / span 1;
+    width: 100%;
+  }
 }
